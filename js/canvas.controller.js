@@ -23,6 +23,12 @@ function onMove(ev) {
 
 function onDraw(ev) {
     const pos = getEvPos(ev)
+    
+    if (gBrush.selectedImg) {
+        gCtx.font = gBrush.size * 2 + 'px Arial'
+        gCtx.fillText(gBrush.selectedImg, pos.x, pos.y)
+        return
+    }
 
     switch (gBrush.shape) {
         case 'square':
@@ -81,16 +87,28 @@ function onUploadImg(ev) {
     uploadImg(canvasData, onSuccess)
 }
 
+function onSetImg(imgValue) {
+  gBrush.selectedImg = imgValue === " " ? null : imgValue
+  console.log('Selected emoji:', gBrush.selectedImg)
+}
+
+function unSetImg() {
+  gBrush.selectedImg = null
+}
+
 function onSetColor(color){
     setColor(color)
+    unSetImg()
 }
 
 function onSetSize(size){
     setSize(size)
+    unSetImg()
 }
 
 function onSetShape(shape) {
     setShape(shape)
+    unSetImg()
 }
 
 function onClearCanvas() {

@@ -10,7 +10,9 @@ var gBrush = {
     color: 'black', 
     size: 5, 
     shape: 'square',
+    selectImg: null,
 }
+
 
 
 function drawRect(x, y) {
