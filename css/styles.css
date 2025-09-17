@@ -1,4 +1,9 @@
 /* basics */
-@import url('css/basics/helpers.css');
+@import url('basics/helpers.css');
+@import url('basics/layout.css');
 
 /* component */
+@import url('basics/component/canvas.css');
+
+/* set up */
+@import url('basics/setup/vars.css');

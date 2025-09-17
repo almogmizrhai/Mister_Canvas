@@ -1,0 +1,16 @@
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+header, footer {
+    grid-column: 1 / -1;
+    background-color: var(--clr-primary-2);
+    color: var(--clr-primary-3);
+    text-align: center;
+    padding: 1em 0;
+}
+
+.app-layout{
+    grid-column: 2 / 3;
+}

@@ -6,18 +6,18 @@
     <title>Mister Canvas</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body onload="onInit()">
+<body class="main-layout" onload="onInit()">
     <header>
         <h1>Mister Canvas</h1>
     </header>
 
-    <main>
+    <main class="app-layout">
         <section>
-            <fieldset>
+            <fieldset class="flex space-between">
                 <legend>Canvas Controls</legend>
-                <input type="color" id="colorBrush" value="#ffffff">
+                <input type="color" class="btn" id="colorBrush" value="#ffffff">
 
-                <select id="brushSize">
+                <select class="btn brushSize">
                     <option value="1">1px</option>
                     <option value="2">2px</option>
                     <option value="5" selected>5px</option>
@@ -25,25 +25,30 @@
                     <option value="20">20px</option>
                 </select>
 
-                <select id="brushShape">
+                <select class="btn brushShape">
                     <option value="round" selected>Round</option>
                     <option value="square">Square</option>
                 </select>
-                <button id="clearCanvas">Clear Canvas</button>
+                <button class="btn clearCanvas">Clear Canvas</button>
             </fieldset>
         </section>
 
         <canvas id="myCanvas" width="800" height="600" style="border:1px solid #000000;"></canvas>
 
-        <div class="action-btn">
-            <button class="saveImage">Save Image</button>
+        <fieldset class="flex space-between action-btn">
+            <legend>Actions</legend>
+            <button class="btn saveImage">Save Image</button>
 
-            <button class="loadImage">Load Image</button>
+            <button class="btn loadImage">Load Image</button>
             <input type="file" id="fileInput" style="display:none;">
 
-            <button class="shareFacebook">Share on Facebook</button>
-        </div>
+            <button class="btn shareFacebook">Share on Facebook</button>
+        </fieldset>
     </main>
+
+    <footer >
+        <p>&copy; 2025 Mister Canvas</p>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>

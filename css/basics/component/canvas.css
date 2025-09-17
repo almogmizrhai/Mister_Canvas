@@ -1,0 +1,7 @@
+#myCanvas {
+  width: 90vw;   /* 90% מרוחב חלון */
+  height: 90vh;  /* 90% מגובה חלון */
+  border: 1px solid #000;
+  display: block;
+  margin: 20px auto;
+}
