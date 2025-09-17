@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mister Canvas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body onload="onInit()">
+    <header>
+        <h1>Mister Canvas</h1>
+    </header>
+
+    <main>
+        <section>
+            <fieldset>
+                <legend>Canvas Controls</legend>
+                <input type="color" id="colorBrush" value="#ffffff">
+
+                <select id="brushSize">
+                    <option value="1">1px</option>
+                    <option value="2">2px</option>
+                    <option value="5" selected>5px</option>
+                    <option value="10">10px</option>
+                    <option value="20">20px</option>
+                </select>
+
+                <select id="brushShape">
+                    <option value="round" selected>Round</option>
+                    <option value="square">Square</option>
+                </select>
+                <button id="clearCanvas">Clear Canvas</button>
+            </fieldset>
+        </section>
+
+        <canvas id="myCanvas" width="800" height="600" style="border:1px solid #000000;"></canvas>
+
+        <div class="action-btn">
+            <button class="saveImage">Save Image</button>
+
+            <button class="loadImage">Load Image</button>
+            <input type="file" id="fileInput" style="display:none;">
+
+            <button class="shareFacebook">Share on Facebook</button>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
