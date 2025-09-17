@@ -27,7 +27,11 @@
 
 
 /* buttons */
-.btn {
+a.btn{
+    text-decoration: none;
+    background-color: var(--clr-primary-4);
+}
+.btn, a.btn {
     border: none;
     padding: 5px;
     border-radius: 8px;

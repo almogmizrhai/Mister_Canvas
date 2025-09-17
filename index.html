@@ -15,9 +15,10 @@
         <section>
             <fieldset class="flex space-between">
                 <legend>Canvas Controls</legend>
-                <input type="color" class="btn" id="colorBrush" value="#ffffff">
 
-                <select class="btn brushSize">
+                <input type="color" class="btn" id="colorBrush" value="#333333" onchange="onSetColor(this.value)">
+
+                <select class="btn brushSize" onchange="onSetSize(this.value)">
                     <option value="1">1px</option>
                     <option value="2">2px</option>
                     <option value="5" selected>5px</option>
@@ -25,24 +26,29 @@
                     <option value="20">20px</option>
                 </select>
 
-                <select class="btn brushShape">
-                    <option value="round" selected>Round</option>
-                    <option value="square">Square</option>
+                <select class="btn brushShape" onchange="onSetShape(this.value)">
+                    <option  value="round" >Round</option>
+                    <option value="square"selected>Square</option>
                 </select>
-                <button class="btn clearCanvas">Clear Canvas</button>
+
+                <button class="btn clearCanvas" onclick="onClearCanvas()">Clear Canvas</button>
             </fieldset>
         </section>
 
-        <canvas id="myCanvas" width="800" height="600" style="border:1px solid #000000;"></canvas>
+        <canvas id="myCanvas" width="800" height="600" style="border:1px solid #333333;"
+        onmousedown="onDown(event)"
+        onmouseup="onUp()"
+        onmousemove="onDraw(event)">
+        </canvas>
 
         <fieldset class="flex space-between action-btn">
             <legend>Actions</legend>
-            <button class="btn saveImage">Save Image</button>
+            <a class="btn" download="canvas.png" onclick="onDownloadCanvas(this)">Download</a>
 
-            <button class="btn loadImage">Load Image</button>
+            <button class="btn loadImage" onclick="onLoadCanvas()">Load Image</button>
             <input type="file" id="fileInput" style="display:none;">
 
-            <button class="btn shareFacebook">Share on Facebook</button>
+            <button class="btn shareFacebook" onclick="onShareFacebook()">Share on Facebook</button>
         </fieldset>
     </main>
 
@@ -51,5 +57,10 @@
     </footer>
 
     <script src="js/main.js"></script>
+
+    <script src="js/canvas.service.js"></script>
+    
+    <script src="js/canvas.controller.js"></script>
+
 </body>
 </html>
