@@ -36,9 +36,12 @@
         </section>
 
         <canvas id="myCanvas" width="800" height="600" style="border:1px solid #333333;"
-        onmousedown="onDown(event)"
-        onmouseup="onUp()"
-        onmousemove="onDraw(event)">
+        onmousedown="onDown(event)" 
+        ontouchstart="onDown(event)" 
+        onmouseup="onUp()" 
+        ontouchend="onUp()" 
+        onmousemove="onDraw(event)" 
+        ontouchmove="onDraw(event)" >
         </canvas>
 
         <fieldset class="flex space-between action-btn">
@@ -53,8 +56,10 @@
                 id="file-input"
                 name="image"
             />
-	
-            <button class="btn shareFacebook" onclick="onShareFacebook()">Share on Facebook</button>
+
+            <!-- <button class="btn" onclick="onUploadImg(event)">Upload To Cloud</button> -->
+
+            <button class="btn shareFacebook" onclick="onUploadImg(event)">Share on Facebook</button>
         </fieldset>
     </main>
 

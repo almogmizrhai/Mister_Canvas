@@ -64,8 +64,21 @@ function renderImg(img) {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function onShareFacebook() {
-    console.log('share facebook')
+function onShareFacebook(url) {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&t=${url}`)
+}
+
+function onUploadImg(ev) {
+    ev.preventDefault()
+    const canvasData = gElCanvas.toDataURL('image/jpeg')
+
+    // After a successful upload, allow the user to share on Facebook
+    function onSuccess(uploadedImgUrl) {
+        const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+        onShareFacebook(encodedUploadedImgUrl)
+    }
+
+    uploadImg(canvasData, onSuccess)
 }
 
 function onSetColor(color){
