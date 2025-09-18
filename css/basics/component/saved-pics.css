@@ -1,0 +1,12 @@
+.saved-pics {
+    margin: 20px auto;
+}
+
+.pic-card{
+    display: grid;
+    gap: 5px;
+}
+
+.pic{
+    width: 150px;
+}

@@ -17,4 +17,6 @@ function onInit() {
     gElCanvas.addEventListener('touchstart', onDown)
     gElCanvas.addEventListener('touchmove', onMove)
     gElCanvas.addEventListener('touchend', onUp)
+
+    renderPics()
 }

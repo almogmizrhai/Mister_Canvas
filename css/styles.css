@@ -4,6 +4,9 @@
 
 /* component */
 @import url('basics/component/canvas.css');
+@import url('basics/component/action-btn.css');
+@import url('basics/component/canvas-controls.css');
+@import url('basics/component/saved-pics.css');
 
 /* set up */
 @import url('basics/setup/vars.css');
